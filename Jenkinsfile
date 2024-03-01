@@ -1,11 +1,11 @@
 pipeline {
-    agent { label 'windowskevin' }
+    agent any
 
     stages {
         stage('Hello') {
             steps {
                 echo 'Hello World 2'
-                sleep(100000)
+                archiveArtifacts artifacts: '*', followSymlinks: false
             }
         }
     }
