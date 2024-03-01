@@ -5,9 +5,9 @@ pipeline {
         stage('Hello') {
             steps {
                 echo 'Hello World 2'
-                ls
+                sh 'ls'
                 archiveArtifacts artifacts: '*', followSymlinks: false
-                ls
+                sh 'ls'
             }
         }
     }
