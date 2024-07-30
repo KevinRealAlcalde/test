@@ -4,10 +4,11 @@ pipeline {
     stages {
         stage('Hello') {
             steps {
-                echo 'Hello World 3'
-                sh 'ls'
-                archiveArtifacts artifacts: '*', followSymlinks: false
-                sh 'ls'
+                parameters {
+                    string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+                    string(name: 'PERSON2', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+                    string(name: 'PERSON3', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+                }
             }
         }
     }
